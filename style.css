@@ -1,0 +1,110 @@
+/* ========== 1. Reset / Basit normalize ========== */
+/* Tarayıcılar arası küçük farklılıkları azaltmak için basit sıfırlama */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== 2. Temel sayfa ve tipografi ========== */
+:root {
+  --bg: #f8acd7;
+  --muted: #000000;
+  --accent: #8b235e;
+  --accent-2: #ffffff;
+  --max-width: 900px;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--bg);
+  color: #222;
+  line-height: 1.6;
+  padding: 32px 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sayfa içeriğini ortala ve genişliği sınırla */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ========== 3. Header ========== */
+header {
+  text-align: center;
+  padding: 28px 0 36px 0;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #8b235e;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-style:inherit;
+  letter-spacing: 0.6px;
+}
+
+header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ========== 4. Bölümler (section) genel stili ========== */
+section {
+  padding: 28px 0;
+  border-bottom: 1px dashed #f0edf2;
+}
+
+/* Başlık stili */
+section h2 span {
+  font-size: 1.15rem;
+  color: #8b235e;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+/* Paragraflar */
+section p {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Liste stilleri (skills gibi) */
+ul {
+    list-style: none;       /* noktalardan kurtul */
+    display: flex;           /* yan yana diz */
+    gap: 8px;                /* kutular arası boşluk */
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background-color: rgba(139, 35, 94, 0.1); /* arka plan şeffaf */
+    color: #000000;                /* yazı siyah */
+    font-size: 1rem;               /* paragraf boyutu */
+    font-weight: 600;
+    padding: 4px 8px;              /* kutu içi boşluk */
+    border-radius: 999px;          /* yuvarlak köşe */
+    cursor: pointer;
+}
+
+.cv-button {
+  display: inline-block;
+  background-color: #8b235e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cv-button:hover {
+  background-color: #c74b94;
+}
+
