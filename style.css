@@ -1,5 +1,4 @@
-/* ========== 1. Reset / Basit normalize ========== */
-/* Tarayıcılar arası küçük farklılıkları azaltmak için basit sıfırlama */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,42 +8,67 @@
 /* ========== 2. Temel sayfa ve tipografi ========== */
 :root {
   --bg: #f8acd7;
-  --muted: #000000;
-  --accent: #8b235e;
-  --accent-2: #ffffff;
-  --max-width: 900px;
+  --text-dark: #333333;
+  --text-muted: #6a6a6a;
+  --accent: #b05a8d;
+  --accent-light: #fbebf3;
+  --max-width: 950px;
+
+  --header-color: #ffffff;
+
+  --card-background: #bddebd;
+
 }
 
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background: var(--bg);
   color: #222;
-  line-height: 1.6;
-  padding: 32px 16px;
+  line-height: 1.7;
+  padding: 50px 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: 
+  repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+background-attachment: fixed;
 }
 
 /* Sayfa içeriğini ortala ve genişliği sınırla */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
+  
+  
+  padding: 0; /* İç boşluğu kartlar dışına taşıdık */
+}
+
+/* body arka planı görünür olmalı */
+body {
+    background: var(--bg); 
+
 }
 
 /* ========== 3. Header ========== */
 header {
   text-align: center;
   padding: 28px 0 36px 0;
-  border-bottom: 1px solid #eee;
 }
 
 header h1 {
-  font-size: 2.2rem;
-  color: #8b235e;
-  margin-bottom: 6px;
-  font-weight: 600;
+  font-size: 2.8rem;
+  color: var(--header-color);
+  margin-bottom: 2px;
+  font-weight: 700;
   font-style:inherit;
-  letter-spacing: 0.6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 header p {
@@ -53,15 +77,38 @@ header p {
 }
 
 /* ========== 4. Bölümler (section) genel stili ========== */
+/* style.css */
+
+/* Kutu (Card) Stili için Genel Bölüm Ayarları */
 section {
-  padding: 28px 0;
-  border-bottom: 1px dashed #f0edf2;
+  border-bottom: none; 
+  
+  /* Her bölüm arasına biraz boşluk ekliyoruz */
+  margin-bottom: 35px; 
+  
+  /* Kart görünümünü veriyoruz */
+  background-color: var(--card-background); 
+  padding: 35px; /* Kartın iç boşluğu */
+  border-radius: 12px; /* Yumuşak köşeler */
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+section:hover {
+  box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.08);
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Başlıkların altındaki boşluğu düzenleyelim */
+section h2 {
+    margin-bottom: 15px; 
+
 }
 
 /* Başlık stili */
 section h2 span {
   font-size: 1.15rem;
-  color: #8b235e;
+  color: var(--header-color);
   margin-bottom: 12px;
   font-weight: 600;
   letter-spacing: 0.8px;
@@ -73,6 +120,8 @@ section p {
   margin-bottom: 8px;
   font-size: 1rem;
 }
+
+
 
 /* Liste stilleri (skills gibi) */
 ul {
@@ -94,10 +143,10 @@ ul li {
 }
 
 .cv-button {
-  display: inline-block;
-  background-color: #8b235e;
+  display: block;
+  background-color: #bddebd;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: 600;
@@ -105,6 +154,17 @@ ul li {
 }
 
 .cv-button:hover {
-  background-color: #c74b94;
+  background-color: #08651b;
+}
+
+/* style.css dosyasındaki footer bloğu */
+footer {
+  /* Bu satır ortalamayı sağlar: */
+  text-align: center; 
+  
+  padding: 20px 0 0;
+  color: black;
+  font-size: 0.85rem;
+  margin-top: 20px; 
 }
 
